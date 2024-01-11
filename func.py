@@ -9,7 +9,7 @@ def randArr(n: int, float = False, start = -99, end = 99) -> list:
     return arr
 
 
-def insertionSort(arr: list, reverse=True) -> None:
+def insertionSort(arr: list, reverse=False) -> None:
     n = len(arr)
     
     for i in range(1, n):
@@ -23,8 +23,9 @@ def insertionSort(arr: list, reverse=True) -> None:
             else:
                 flag = 1
 
-
-
-
-
+arr = randArr(10)
+print(arr)
+print()
+insertionSort(arr)
+print(arr)
 

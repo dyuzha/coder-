@@ -13,4 +13,3 @@ def merge(arr1: list, arr2: list, up=True) -> list:
         arr.append(arr2[j])
         
 
-
