@@ -3,25 +3,37 @@ import random as r
 
 def randArr(n: int, float = False, start = -99, end = 99) -> list:
     if float:
-        arr = [r.uniform(start, end) for i in range(n)]
+        list = [r.uniform(start, end) for i in range(n)]
     else:
-        arr = [r.randint(start, end) for i in range(n)]
-    return arr
+        list = [r.randint(start, end) for i in range(n)]
+    return list
 
 
-def insertionSort(arr: list, reverse=False) -> None:
-    n = len(arr)
-    
+
+def insertionSort(lst: list, reverse=False) -> None:
+    n = len(lst)
     for i in range(1, n):
         j = i - 1
-        flag = 0
-        while j >= 0 and flag == 0:
-            if (arr[i] > arr[j]) == reverse:
-                arr[i], arr[j] = arr[j], arr[i]
+        while j >= 0:
+            if (lst[i] > lst[j]) == reverse:
+                lst[i], lst[j] = lst[j], lst[i]
                 j -= 1
                 i -= 1
             else:
-                flag = 1
+                break
+
+
+def insertion_sort(alist):
+    for i in range(1, len(alist)):
+        temp = alist[i]
+        j = i - 1
+        while (j >= 0 and temp < alist[j]):
+            alist[j + 1] = alist[j]
+            j -= 1
+        alist[j + 1] = temp
+
+
+
 
 arr = randArr(10)
 print(arr)
